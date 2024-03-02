@@ -6,8 +6,6 @@
 
     Dictionary<string, List<int>> bandasRegistradas = new Dictionary<string, List<int>>(); //! dicionário criado, onde a chave seria o nome das bandas
                                                                                            //! e os valores são as notas dessas bandas!
-    bandasRegistradas.Add("The chainsmokers", new List<int> { 10, 8, 6 });
-    bandasRegistradas.Add("Charlie Brown Jr", new List<int>());
 
     void ExibirLogo()
     {
@@ -137,16 +135,16 @@
         Clear();
         ExibirTituloDaOpcao("Média de avaliação das bandas");
         Write("Digite o nome da banda que você deseja saber a média de avaliações: ");
-        string nomeDaBanda = ReadLine()!;
+        string nomeDaBanda = ReadLine()!; //! recebendo o nome da banda
 
-        if (bandasRegistradas.ContainsKey(nomeDaBanda))
+        if (bandasRegistradas.ContainsKey(nomeDaBanda)) //! se banda digitada está na chave do dicionário
         {
-            double mediaDaBanda = bandasRegistradas[nomeDaBanda].Average();
-            WriteLine($"A média da banda {nomeDaBanda} possui uma avaliação média de {mediaDaBanda}");
+            double mediaDaBanda = bandasRegistradas[nomeDaBanda].Average(); //! calcular a média das avaliação na parte dos valores do dicionário com o método Avarage()
+            WriteLine($"A média da banda {nomeDaBanda} possui uma avaliação média de {mediaDaBanda}"); //! saída
         }
         else
         {
-            WriteLine("Essa banda não existe");
+            WriteLine("Essa banda não existe"); //! se não houver uma chave com o nome da banda digitada
         }
         Clear();
         WriteLine("Digite qualquer tecla para voltar ao menu principal");

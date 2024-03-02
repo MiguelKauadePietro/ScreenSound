@@ -148,8 +148,9 @@
         {
             WriteLine("Essa banda não existe");
         }
-        Thread.Sleep(4000);
         Clear();
+        WriteLine("Digite qualquer tecla para voltar ao menu principal");
+        ReadKey();
         ExibirOpcoesDoMenu();
     }
 
